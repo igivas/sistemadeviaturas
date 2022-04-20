@@ -1,0 +1,22 @@
+-- Query para achar filiais
+
+WITH RECURSIVE oficinas_filiais AS (
+   SELECT * from sav.oficinas o where o.id_oficina = '5087073a-61c4-40eb-a152-e28ed0f6571b'
+  UNION ALL
+
+  SELECT o2.*
+   FROM sav.oficinas o2
+    INNER JOIN oficinas_filiais ON o2.id_oficina_pai = oficinas_filiais.id
+) SELECT * FROM oficinas_filiais;
+
+-- Query para achar superiores
+WITH RECURSIVE oficinas_superiores AS (
+   SELECT *, o.nome as historico from sav.oficinas o where o.id_oficina = '4b8f9ea3-4ddd-46ef-b731-ffe49e9b80ae'
+  UNION ALL
+
+  SELECT o2.*, (
+  	o2.nome || '>' || oficinas_filiais.nome
+  ) as historico
+   FROM sav.oficinas o2
+    INNER JOIN oficinas_filiais ON o2.id = oficinas_filiais.id_oficina_pai
+) SELECT * FROM oficinas_filiais;

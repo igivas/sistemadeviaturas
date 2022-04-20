@@ -1,0 +1,10 @@
+POST http://localhost:4003/sessions
+Content-Type: application/json
+
+{
+  "matricula":"30891368",
+  "senha":"Chicojj123"
+}
+
+###
+

@@ -1,0 +1,13 @@
+/src/**
+/node_modules/**
+/.vscode/**
+/.github/**
+/tmp/**
+/uploads/**
+/jest*.*
+/jest/**
+yarn*.*
+
+/.dockerignore
+./Dockerfile
+/prettier*.*

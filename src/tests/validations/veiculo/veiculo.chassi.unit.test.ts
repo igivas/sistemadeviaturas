@@ -1,0 +1,98 @@
+import 'reflect-metadata';
+import { container } from 'tsyringe';
+import { createVeiculoRules } from '@modules/veiculos/schemas/rules/veiculoRules';
+import { IValidationRules } from '@modules/veiculos/interfaces/validation/IValidationRules';
+import { ValidationError } from 'yup';
+import { IPostVeiculos } from '@modules/veiculos/interfaces/request/IPostVeiculos';
+import {
+  requiredField,
+  maxLengthRequiredField,
+} from '@modules/veiculos/schemas/messages/fieldsMessageValidation';
+import Context from '../../../patterns/strategy/schemas/Context';
+import YupValidation from '../../../patterns/strategy/schemas/Yup';
+
+type ISut = {
+  context: Context<IPostVeiculos>;
+  yupValidation: YupValidation<IPostVeiculos>;
+  createVeiculoRules: IValidationRules;
+};
+
+function makeid(length: number): string {
+  const result = [];
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'.split(
+    '',
+  );
+  for (let i = 0; i < length; i += 1) {
+    result.push(characters[Math.floor(Math.random() * characters.length)]);
+  }
+  return result.join('');
+}
+
+describe.skip('Unit test for veiculo post request', () => {
+  let sut = {} as ISut;
+  const makeSut = (): ISut => {
+    const yupValidation = container.resolve<YupValidation<IPostVeiculos>>(
+      YupValidation,
+    );
+    const context = new Context<IPostVeiculos>();
+
+    return {
+      context,
+      yupValidation,
+      createVeiculoRules,
+    };
+  };
+
+  beforeEach(() => {
+    sut = makeSut();
+  });
+
+  test('Context should be instance of YupValidation ', () => {
+    sut.context.setStrategy(sut.yupValidation);
+
+    expect(sut.context.getStrategy()).toBeInstanceOf(YupValidation);
+  });
+
+  test('should throw an error if chassi is empty', async () => {
+    sut.context.setStrategy(sut.yupValidation);
+    const schema = sut.context.createSchema(createVeiculoRules);
+
+    try {
+      await sut.context.validateData(schema, {});
+    } catch (error) {
+      expect(error).toBeInstanceOf(ValidationError);
+      expect(error.value).toMatchObject({});
+      expect(error.errors[0]).toEqual(requiredField('Chassi'));
+    }
+  });
+
+  test('should throw an error if chassi is invalid', async () => {
+    sut.context.setStrategy(sut.yupValidation);
+    const schema = sut.context.createSchema(createVeiculoRules);
+
+    const chassiExample = makeid(19);
+
+    try {
+      await sut.context.validateData(schema, {
+        chassi: chassiExample,
+      });
+    } catch (error) {
+      expect(error).toBeInstanceOf(ValidationError);
+      expect(error.value).toMatchObject({
+        chassi: chassiExample.toUpperCase(),
+      });
+      expect(error.errors[0]).toEqual(maxLengthRequiredField('Chassi', 18));
+    }
+  });
+
+  test('should return an object containing chassi if chassi is validated', async () => {
+    sut.context.setStrategy(sut.yupValidation);
+    const schema = sut.context.createSchema(createVeiculoRules);
+
+    const response = await sut.context.validateData(schema, {
+      chassi: 'poi1311',
+    });
+
+    expect(response).toMatchObject({ chassi: 'POI1311' });
+  });
+});

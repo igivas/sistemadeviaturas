@@ -1,0 +1,136 @@
+[
+  {
+    "aquisicao": {
+      "origem_aquisicao": "0",
+      "data_aquisicao": "31/10/2020",
+      "forma_aquisicao": 1,
+      "id_orgao_aquisicao": "5"
+    },
+    "prefixo": {
+      "data_prefixo": "27/10/2020",
+      "prefixo_tipo": "21",
+      "prefixo_sequencia": "123456",
+      "emprego": 0
+    },
+    "identificador": {
+      "data_identificador": "14/10/2020",
+      "identificador": "TP01"
+    },
+    "chassi": "9BG156FK0JC416301",
+    "placa": "POP2601",
+    "id_uf": 1,
+    "renavam": "55555",
+    "numero_crv": "12341414",
+    "codigo_seguranca_crv": "12341414",
+    "id_veiculo_especie": 4,
+    "id_marca": 1,
+    "id_modelo": 2,
+    "ano_fabricacao": "2020",
+    "ano_modelo": "2020",
+    "id_cor": 8,
+    "numero_motor": "sdfsd46456",
+    "combustivel": "1",
+    "valor_fipe": "20.000,20",
+    "tipo_tombo": "1",
+    "tombo": "xxxxxxxx",
+    "tipo_doc_carga": "0",
+    "numero_doc_carga": "234",
+    "data_doc_carga": "21/10/2020",
+    "opm_carga": 2,
+    "referenciasPneus": [
+      { "id_referencia_pneu": 1 },
+      { "id_referencia_pneu": 2 }
+    ],
+    "data_operacao": "21/10/2020",
+    "observacao": "testando"
+  },
+  {
+    "aquisicao": {
+      "origem_aquisicao": "0",
+      "data_aquisicao": "31/10/2020",
+      "forma_aquisicao": 0,
+      "valor_aquisicao": "2000"
+    },
+    "prefixo": {
+      "data_prefixo": "27/10/2020",
+      "prefixo_tipo": "21",
+      "prefixo_sequencia": "12345",
+      "emprego": 0
+    },
+    "identificador": {
+      "data_identificador": "14/10/2020",
+      "identificador": "TP01"
+    },
+    "chassi": "9BG156FK0JC416301",
+    "placa": "POP2601",
+    "id_uf": 1,
+    "renavam": "55555",
+    "numero_crv": "12341414",
+    "codigo_seguranca_crv": "12341414",
+    "id_veiculo_especie": 4,
+    "id_marca": 1,
+    "id_modelo": 2,
+    "ano_fabricacao": "2020",
+    "ano_modelo": "2020",
+    "id_cor": 8,
+    "numero_motor": "sdfsd46456",
+    "combustivel": "1",
+    "valor_fipe": "20.000,20",
+    "tipo_tombo": "1",
+    "tombo": "xxxxxxxx",
+    "tipo_doc_carga": "0",
+    "numero_doc_carga": "234",
+    "data_doc_carga": "21/10/2020",
+    "opm_carga": 2,
+    "referenciasPneus": [
+      { "id_referencia_pneu": 1 },
+      { "id_referencia_pneu": 2 }
+    ],
+    "data_operacao": "21/10/2020",
+    "observacao": "testando"
+  },
+  {
+    "aquisicao": {
+      "origem_aquisicao": "2",
+      "id_orgao_aquisicao": 5,
+      "data_aquisicao": "31/10/2020"
+    },
+    "prefixo": {
+      "data_prefixo": "27/10/2020",
+      "prefixo_tipo": "21",
+      "prefixo_sequencia": "12345",
+      "emprego": 0
+    },
+    "identificador": {
+      "data_identificador": "14/10/2020",
+      "identificador": "242424"
+    },
+    "chassi": "9BG156FK0JC416555",
+    "placa": "POP2601",
+    "id_uf": 1,
+    "renavam": "55555",
+    "numero_crv": "12341414",
+    "codigo_seguranca_crv": "12341414",
+    "id_veiculo_especie": 4,
+    "id_marca": 1,
+    "id_modelo": 2,
+    "ano_fabricacao": "2020",
+    "ano_modelo": "2020",
+    "id_cor": 8,
+    "numero_motor": "sdfsd46456",
+    "combustivel": "1",
+    "valor_fipe": "20.000,20",
+    "tipo_tombo": "1",
+    "tombo": "xxxxxxxx",
+    "tipo_doc_carga": "0",
+    "numero_doc_carga": "234",
+    "data_doc_carga": "21/10/2020",
+    "opm_carga": 2,
+    "referenciasPneus": [
+      { "id_referencia_pneu": 1 },
+      { "id_referencia_pneu": 2 }
+    ],
+    "data_operacao": "21/10/2020",
+    "observacao": "testando"
+  }
+]

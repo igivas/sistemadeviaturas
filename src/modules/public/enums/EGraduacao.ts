@@ -1,0 +1,26 @@
+enum EGraduacao {
+  'CEL CMTE-GERAL' = 0,
+  CEL = 1,
+  'TEN-CEL' = 2,
+  MAJ = 3,
+  CAP = 4,
+  '1ºTEN' = 5,
+  '2ºTEN' = 6,
+  ASP = 7,
+  'CFO-3ºANO' = 8,
+  'CFO-2ºANO' = 9,
+  'CFO-1ºANO' = 10,
+  'SUBTEN' = 11,
+  '1ºSGT' = 12,
+  '2ºSGT' = 13,
+  '3ºSGT' = 14,
+  'AL CFS' = 15,
+  CB = 16,
+  'AL CHC' = 17,
+  SD = 18,
+  'AL CFSDF' = 19,
+  'FUNC. CIVIL' = 20,
+  'SD PM TEMP' = 21,
+}
+
+export default EGraduacao;
